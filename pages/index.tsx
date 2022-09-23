@@ -1,7 +1,6 @@
 import { Layout } from "@components/layouts";
-import type { NextPage } from "next";
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <Layout center>
       <main className="prose">
@@ -11,6 +10,4 @@ const Home: NextPage = () => {
       </main>
     </Layout>
   );
-};
-
-export default Home;
+}
