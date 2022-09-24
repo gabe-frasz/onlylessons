@@ -6,7 +6,7 @@
 
 body,
 #__next {
-  @apply bg-gray-900 text-gray-100;
+  @apply bg-gray-900 text-gray-100 scrollbar scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-track-gray-700;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
