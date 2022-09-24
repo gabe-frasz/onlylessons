@@ -17,3 +17,9 @@ export interface LayoutProps {
 // * module components
 
 // * widget components
+export interface LessonProps {
+  title: string;
+  slug: string;
+  availableAt: Date;
+  type: "live" | "class";
+}
