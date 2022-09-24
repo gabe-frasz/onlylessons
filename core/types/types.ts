@@ -8,6 +8,18 @@ export type GetLessonsQueryResponse = {
     lessonType: "live" | "class";
   }[];
 };
+export type GetLessonBySlugQueryResponse = {
+  lesson: {
+    title: string;
+    description: string;
+    videoId: string;
+    teacher: {
+      name: string;
+      bio: string;
+      avatarURL: string;
+    } | null;
+  };
+};
 
 // * contexts values
 export type ThemeContextValue = {
