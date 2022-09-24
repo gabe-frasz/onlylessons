@@ -1,14 +1,19 @@
 import { LessonProps } from "@core/types";
+import { format, isPast } from "date-fns";
 import Link from "next/link";
 import { CheckCircle, Lock } from "phosphor-react";
 
 export const Lesson = (props: LessonProps) => {
-  const isLessonAvailable = false;
+  const isLessonAvailable = isPast(props.availableAt);
+  const availableDateFormatted = format(
+    props.availableAt,
+    "EEEE' • 'MMMM' 'dd'th • 'kk'h'mm"
+  );
 
   return (
     <Link href="#">
       <a>
-        <span className="text-gray-300">{props.availableAt.toString()}</span>
+        <span className="text-gray-300">{availableDateFormatted}</span>
 
         <div className="mt-2 p-4 border border-gray-500 rounded">
           <header className="flex justify-between items-center">
@@ -20,7 +25,7 @@ export const Lesson = (props: LessonProps) => {
             ) : (
               <span className="flex items-center gap-2 text-sm text-orange-500 font-medium">
                 <Lock size={20} />
-                Content available
+                Soon
               </span>
             )}
 
