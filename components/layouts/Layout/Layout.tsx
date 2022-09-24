@@ -1,4 +1,3 @@
-import { useTheme } from "@core/hooks";
 import { LayoutProps } from "@core/types";
 import Head from "next/head";
 
@@ -9,8 +8,6 @@ export const Layout = ({
   className = "",
   children,
 }: LayoutProps) => {
-  const { appTheme } = useTheme();
-
   return (
     <>
       <Head>
@@ -19,7 +16,6 @@ export const Layout = ({
       </Head>
 
       <div
-        data-theme={appTheme}
         className={`min-h-screen flex flex-col ${
           center ? "justify-center items-center" : ""
         } ${className}`}
