@@ -11,11 +11,22 @@ export const Lesson = (props: LessonProps) => {
   );
 
   return (
-    <Link href="#">
-      <a>
+    <Link
+      href={{
+        href: `/event/lessons/[slug]`,
+        query: {
+          slug: props.slug,
+        },
+      }}
+    >
+      <a
+        className={`${
+          isLessonAvailable ? "group" : "pointer-events-none brightness-50"
+        }`}
+      >
         <span className="text-gray-300">{availableDateFormatted}</span>
 
-        <div className="mt-2 p-4 border border-gray-500 rounded">
+        <div className="mt-2 p-4 border border-gray-500 rounded group-hover:border-green-500 transition-colors">
           <header className="flex justify-between items-center">
             {isLessonAvailable ? (
               <span className="flex items-center gap-2 text-sm text-blue-500 font-medium">
@@ -29,7 +40,7 @@ export const Lesson = (props: LessonProps) => {
               </span>
             )}
 
-            <span className="px-2 py-0.5 text-xs text-white font-bold border border-green-300 rounded">
+            <span className="px-1 py-0.5 text-xs text-white font-bold border border-green-300 rounded">
               {props.type === "live" ? "LIVE" : "PRACTICAL CLASS"}
             </span>
           </header>
