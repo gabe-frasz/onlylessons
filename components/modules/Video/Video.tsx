@@ -2,7 +2,6 @@ import { BigHead } from "@bigheads/core";
 import { LinkButton } from "@components/widgets";
 import { VideoProps } from "@core/types";
 import "@vime/core/themes/default.css";
-import { DefaultUi, Player, Youtube } from "@vime/react";
 import NextImage from "next/image";
 import {
   CaretRight,
@@ -20,11 +19,18 @@ export const Video = (props: VideoProps) => {
       {/* player */}
       <div className="bg-black">
         <div className="w-full h-full aspect-video max-w-[1100px] max-h-[60vh] mx-auto">
-          <Player>
+          {/* <Player>
             <Youtube videoId={videoId} />
 
             <DefaultUi />
-          </Player>
+          </Player> */}
+
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            className="w-full h-full aspect-video max-w-[1100px] max-h-[60vh] mx-auto"
+          />
         </div>
       </div>
 
