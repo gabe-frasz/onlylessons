@@ -76,7 +76,11 @@ export default function Home() {
         </div>
       </main>
 
-      <Image src={codeIllustration} alt="code illustration" />
+      <Image
+        src={codeIllustration}
+        alt="code illustration"
+        placeholder="blur"
+      />
 
       <Toaster />
     </div>
