@@ -1,9 +1,11 @@
 import { gql } from "@apollo/client";
 import { NextHead } from "@components/layouts/";
 import { Header, Sidebar, Video } from "@components/modules";
-import { GET_LESSON_BY_SLUG_QUERY } from "@core/graphql/queries";
+import {
+  LessonBySlugDocument,
+  LessonBySlugQuery,
+} from "@core/graphql/generated";
 import { hygraph } from "@core/services";
-import { GetLessonBySlugQueryResponse } from "@core/types";
 import {
   GetStaticPaths,
   GetStaticPropsContext,
@@ -16,14 +18,19 @@ export default function LessonPage({
   return (
     <div className="min-h-screen flex flex-col">
       <NextHead
-        title={`Ignite Lab | ${lesson.title}`}
+        title={`Ignite Lab | ${lesson?.title}`}
         description="some description"
       />
 
       <Header />
 
       <main className="mt-[75px] mr-[370px] flex flex-1">
-        <Video {...lesson} />
+        <Video
+          title={lesson?.title!}
+          description={lesson?.description!}
+          videoId={lesson?.videoId!}
+          teacher={lesson?.teacher!}
+        />
 
         <Sidebar />
       </main>
@@ -32,8 +39,8 @@ export default function LessonPage({
 }
 
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
-  const { data } = await hygraph.query<GetLessonBySlugQueryResponse>({
-    query: GET_LESSON_BY_SLUG_QUERY,
+  const { data } = await hygraph.query<LessonBySlugQuery>({
+    query: LessonBySlugDocument,
     variables: {
       slug: ctx.params?.slug,
     },
