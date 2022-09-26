@@ -4,6 +4,7 @@ import { Header, Sidebar, Video } from "@components/modules";
 import {
   LessonBySlugDocument,
   LessonBySlugQuery,
+  LessonBySlugQueryVariables,
 } from "@core/graphql/generated";
 import { hygraph } from "@core/services";
 import {
@@ -43,7 +44,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
     query: LessonBySlugDocument,
     variables: {
       slug: ctx.params?.slug,
-    },
+    } as LessonBySlugQueryVariables,
   });
 
   return {
