@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        blur: "url('/images/blur-background.png')",
+        react: "url('/images/reactjs-logo.svg')",
+      },
       container: {
         center: true,
         padding: "1rem",
