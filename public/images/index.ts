@@ -1,1 +1,1 @@
-export * from "./";
+export * as codeIllustration from "./code-illustration.png";
