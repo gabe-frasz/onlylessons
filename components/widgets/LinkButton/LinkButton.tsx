@@ -20,7 +20,7 @@ export const LinkButton = ({ variant, children }: LinkButtonProps) => {
       return (
         <a
           href="#"
-          className={`${commonClasses} bg-green-500 rounded hover:bg-green-700`}
+          className={`${commonClasses} bg-green-500 hover:bg-green-700`}
         >
           {children}
         </a>
