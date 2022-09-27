@@ -1,11 +1,11 @@
-export const Logo = () => {
+export const Logo = ({ className }: { className?: string }) => {
   return (
     <svg
       width="237"
       height="34"
       fill="none"
       viewBox="0 0 237 34"
-      className="mx-auto"
+      className={className ?? ""}
     >
       <path
         fill="#fff"
