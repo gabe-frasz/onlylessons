@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 import { NextHead } from "@components/layouts/";
-import { Header, Sidebar, Video } from "@components/modules";
+import { Footer, Header, Sidebar, Video } from "@components/modules";
 import {
   LessonBySlugDocument,
   LessonBySlugQuery,
@@ -25,7 +25,7 @@ export default function LessonPage({
 
       <Header />
 
-      <main className="mt-[75px] mr-[370px] flex flex-1">
+      <main className="flex-1 mt-[75px] mr-[370px] flex flex-col">
         <Video
           title={lesson?.title!}
           description={lesson?.description!}
@@ -34,6 +34,8 @@ export default function LessonPage({
         />
 
         <Sidebar />
+
+        <Footer />
       </main>
     </div>
   );

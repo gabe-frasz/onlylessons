@@ -1,5 +1,6 @@
 import { codeIllustration } from "@/images";
 import { NextHead } from "@components/layouts";
+import { Footer } from "@components/modules";
 import { Logo } from "@components/widgets";
 import { BuiltInProviderType } from "next-auth/providers";
 import { signIn } from "next-auth/react";
@@ -28,7 +29,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-blur bg-cover bg-no-repeat">
+    <div className="w-full min-h-screen flex flex-col items-center bg-blur bg-cover bg-no-repeat">
       <NextHead
         title="Ignite Lab | Subscribe"
         description="Build a complete application, from zero, with React. In just one week you will master in practice one of the most used technologies and with high demand to access the best opportunities on the market."
@@ -37,7 +38,7 @@ export default function Home() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[654px] h-[575px] bg-react bg-cover bg-no-repeat" />
 
       <main className="w-full max-w-[1100px] mt-20 mx-auto flex justify-between items-center gap-4 z-10">
-        <article className="max-w-[640px]">
+        <article className="max-w-[640px] flex flex-col">
           <Logo />
 
           <h1 className="mt-8 text-[2.5rem] leading-tight">
@@ -81,6 +82,8 @@ export default function Home() {
         alt="code illustration"
         placeholder="blur"
       />
+
+      <Footer />
 
       <Toaster />
     </div>
