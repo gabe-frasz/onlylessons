@@ -1,14 +1,5 @@
-// import type { NextRequest } from "next/server";
 import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
-
-// export function middleware(req: NextRequest) {
-//   switch (req.nextUrl.pathname) {
-//     case "/event":
-//     case "/event/lessons":
-//       return NextResponse.redirect(new URL("/event/lessons/test", req.url));
-//   }
-// }
 
 export default withAuth(
   function middleware(req) {
